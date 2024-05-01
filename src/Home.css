@@ -74,7 +74,8 @@
 .image{
 	height:50vh;
 	width:20vw;
-	background:#DBDBDB;
+/*	background:#DBDBDB;*/
+	background-position: left center;
 }
 
 .product_name{
@@ -385,6 +386,7 @@
 	.image{
 		height:35vh;
 		width:45vw;
+		background-position: center center;
 	}
 
 	.product_name{
