@@ -18,7 +18,7 @@ const cart_reducer = (state = cart, action)=>{
 	if(action.type === ADD_TO_CART){
 		return {
 			...state,
-			products : [...state.products,action.payload]
+			products : [action.payload,...state.products]
 		}
 	}
 	else{

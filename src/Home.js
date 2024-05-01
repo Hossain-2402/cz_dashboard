@@ -11,10 +11,9 @@ function Home() {
   const [products,setProducts] = useState([]);
   const [positionOfDetailArea,setPositionOfDetailArea] = useState("-200vw");
   const [tempNewItemForCart,setTempNewItemForCart] = useState();
+  const [tempLeadingImage,setTempLeadingImage] = useState("https://scontent.fdac41-1.fna.fbcdn.net/v/t39.30808-6/438216908_990245046437412_764419811823206966_n.jpg?stp=cp6_dst-jpg&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=4kFdMbs7jXwAb6jmRp9&_nc_ht=scontent.fdac41-1.fna&oh=00_AfBc9w3xDgUjGjP9zpoY-cri1zMj7RcFkrXVFmzdB7R3OQ&oe=6636DC71");
   const items = useSelector(state => state.products);
   const dispatch = useDispatch();
-
-  const [tempLeadingImage,setLeadingImage] = useState("https://scontent.fdac41-1.fna.fbcdn.net/v/t39.30808-6/438216908_990245046437412_764419811823206966_n.jpg?stp=cp6_dst-jpg&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=4kFdMbs7jXwAb6jmRp9&_nc_ht=scontent.fdac41-1.fna&oh=00_AfBc9w3xDgUjGjP9zpoY-cri1zMj7RcFkrXVFmzdB7R3OQ&oe=6636DC71");
 
   useEffect(()=>{
     db.collection('products').orderBy("timestamp","asc").onSnapshot(snapshot=>{
@@ -40,7 +39,7 @@ function Home() {
 
   const showDetailArea = (item)=>{
     setPositionOfDetailArea("0vw");
-    setLeadingImage(item.leading_image);
+    setTempLeadingImage(item.leading_image);
     setTempNewItemForCart(item);
   }
   const hideDetailArea = ()=>{

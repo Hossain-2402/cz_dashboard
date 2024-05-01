@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Home from "./Home";
-import Cart from "./Cart";
+import Cart from "./Cart.js";
 import {useState} from "react";
 
 function App() {
@@ -28,7 +28,8 @@ const hideMenuArea = ()=>{
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"/>
       <link rel="styleSheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
       <BrowserRouter>
-      <div className="logo"><b>LOGO</b></div>
+      <div className="menu_btn" onClick={()=>{showMenuArea()}}><i class="fa fa-bars"></i></div>
+      <Link to="/" className="logo"><b>LOGO</b></Link>
       <div  style={{ opacity: opacityOfGreyArea, height:heightOfGreyArea}} className="grey_background"></div>
       <div className="menu_btn" onClick={()=>{showMenuArea()}}><i class="fa fa-bars"></i></div>
       <Link to="/cart" className="cart_in_top">Cart</Link>
