@@ -156,6 +156,25 @@
 	float: left;
 }
 
+.add_product_btn{
+	border:2px solid white;
+	background:black;
+	color:white;
+	border:2px solid black;
+	margin-top:5vh;
+	margin-left: 50%;
+	transform: translate(-50%,0);
+	padding:2vh 10vw 2vh 10vw;
+	font-family: verdana;
+	display: flex;
+	float: left;
+	justify-content: center;
+	align-items: center;
+	cursor:pointer;
+	transition: .2s;
+
+}
+
 .products_area{
 	height:auto;
 	width:100vw;

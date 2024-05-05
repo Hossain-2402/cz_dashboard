@@ -16,25 +16,11 @@ function Home() {
   const dispatch = useDispatch();
 
   useEffect(()=>{
-    db.collection('products').orderBy("timestamp","asc").onSnapshot(snapshot=>{
+    db.collection('products').orderBy("timestamp","desc").onSnapshot(snapshot=>{
       setProducts(snapshot.docs.map(doc => doc.data()));
     });
   },[]);
 
-  const addItem = ()=>{
-    // db.collection('products').add(
-    //   {
-    //     product_name : "Product Name",
-    //     product_detail : " Product detail" ,
-    //     leading_image : "leading Image",
-    //     first_image : "first image",
-    //     second_image : "second image",
-    //     third_image : "third image",
-    //     forth_image : "forth image",
-    //     sizes : "1",
-    //     timestamp : firebase.firestore.FieldValue.serverTimestamp()
-    // }) ;
-  }
 
   const showDetailArea = (item)=>{
     setPositionOfDetailArea("0vw");
@@ -48,7 +34,7 @@ function Home() {
   
   let alreadyAdded = false;
   for(let i=0;i<items.length;i++){
-    if(items[i].timestamp === tempNewItemForCart.timestamp){
+    if(items[i].leading_image === tempNewItemForCart.leading_image){
       alreadyAdded = true;
       break;
     }
@@ -108,7 +94,7 @@ function Home() {
       <div className="header">
         <div className="header_text">Medium length section heading goes here  </div>
         <div className="sub_header_text">The term business refers to an organization or enterprising entity engaged in commercial, industrial, or professional activities. The purpose of a business is to organize some sort of economic production of goods or services. Businesses can be for-profit entities or non-profit organizations fulfilling a charitable mission or furthering a social cause. Businesses range in scale and scope from sole proprietorships to large, international corporations. </div>
-        <div className="cart_btn" onClick={()=>{addItem()}}>Cart</div>
+        <div className="cart_btn" >Cart</div>
       </div>
 
       <div className="products_area">
