@@ -1,10 +1,10 @@
 
-function Random() {
+function AddProductScreen() {
   return (
-    <div className="Random">
+    <div className="AddProductScreen">
 
     </div>
   );
 }
 
-export default Random;
+export default AddProductScreen;

@@ -1,3 +1,4 @@
+
 .Home{
 	margin-top:10vh;
 }
@@ -204,25 +205,13 @@
 	float: left;
 }
 
-.sizes{	
-	height:4vh;
-	margin-top:2vh;
-	margin-left:50%;
-	transform: translate(-50%,0);
-	border:2px solid grey;
-	padding:1vh 2vw 1vh 1vw;
-	outline:none;
-	font-family: verdana;
-	float: left;
-
-}
 
 .add_to_cart_btn{
   width:30vw;
   border:2px solid white;
   background:black;
   color:white;
-  margin-top:2vh;
+  margin-top:6vh;
   margin-left: 50%;
   transform: translate(-50%,0);
   padding:2vh 2vw 2vh 2vw;

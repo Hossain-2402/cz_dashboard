@@ -34,7 +34,6 @@ function Home() {
     //     sizes : "1",
     //     timestamp : firebase.firestore.FieldValue.serverTimestamp()
     // }) ;
-    console.log(items.length);
   }
 
   const showDetailArea = (item)=>{
@@ -102,7 +101,6 @@ function Home() {
               of goods or services. Businesses can be for-profit entities or non-profit organizations fulfilling a charitable mission or
               furthering a social cause. Businesses range in scale and scope from sole proprietorships to large, international corporations.
           </div>
-          <input type="text" className="sizes" placeholder="Enter your measurements"/>          
           <div className="add_to_cart_btn" onClick={()=>{addItemToCart()}}>Add to cart</div>
         </div>
       </div>

@@ -1,0 +1,261 @@
+.AddProductScreen{
+	margin-top:10vh;
+}
+
+
+.add_new_product_btn{
+  border:2px solid white;
+  background:white;
+  color:black;
+  border:2px solid black;
+  margin-top:25vh;
+  margin-left: 50%;
+  transform: translate(-50%,0);
+  padding:2vh 10vw 2vh 10vw;
+  font-family: verdana;
+  display: flex;
+  float: left;
+  justify-content: center;
+  align-items: center;
+  cursor:pointer;
+  transition: .2s;
+}
+.add_new_product_btn:hover{
+  background:black;
+  color:white;
+}
+
+
+.new_product_input_area{
+	position:fixed;
+	height:100vh;
+	width:100vw;
+	margin-top: -10vh;
+	z-index: 100;
+	background:white;
+	transition:.5s ease-in-out;
+}
+
+
+.close_input_Area_btn{
+  height:5vh;
+  width:auto;
+  background:black;
+  color:white;
+  padding:0 2vw 0 2vw;
+  border-radius: 10px;
+  position:absolute;
+  right:2vw;
+  top:2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor:pointer;
+}
+
+.product_name_input{
+	width:70vw;
+	margin-top:10vh;
+	margin-left:50%;
+	transform: translate(-50%,0);
+	font-family: verdana;
+	outline: none;
+	border-radius: 10px black;
+	border:4px solid black;
+	padding:2vh 2vw 2vh 2vw;
+	float: left;
+}
+
+.product_price_input{
+	width:70vw;
+	margin-top:2vh;
+	margin-left:50%;
+	transform: translate(-50%,0);
+	font-family: verdana;
+	outline: none;
+	border-radius: 10px black;
+	border:4px solid black;
+	padding:2vh 2vw 2vh 2vw;
+	float: left;
+}
+
+.leading_image_input{
+	width:70vw;
+	margin-top:2vh;
+	margin-left:50%;
+	transform: translate(-50%,0);
+	font-family: verdana;
+	outline: none;
+	border-radius: 10px black;
+	border:4px solid black;
+	padding:2vh 2vw 2vh 2vw;
+	float: left;
+}
+
+.first_image_input{
+	width:70vw;
+	margin-top:2vh;
+	margin-left:50%;
+	transform: translate(-50%,0);
+	font-family: verdana;
+	outline: none;
+	border-radius: 10px black;
+	border:4px solid black;
+	padding:2vh 2vw 2vh 2vw;
+	float: left;
+}
+
+.second_image_input{
+	width:70vw;
+	margin-top:2vh;
+	margin-left:50%;
+	transform: translate(-50%,0);
+	font-family: verdana;
+	outline: none;
+	border-radius: 10px black;
+	border:4px solid black;
+	padding:2vh 2vw 2vh 2vw;
+	float: left;
+}
+
+.third_image_input{
+	width:70vw;
+	margin-top:2vh;
+	margin-left:50%;
+	transform: translate(-50%,0);
+	font-family: verdana;
+	outline: none;
+	border-radius: 10px black;
+	border:4px solid black;
+	padding:2vh 2vw 2vh 2vw;
+	float: left;
+}
+
+.forth_image_input{	width:70vw;
+	margin-top:2vh;
+	margin-left:50%;
+	transform: translate(-50%,0);
+	font-family: verdana;
+	outline: none;
+	border-radius: 10px black;
+	border:4px solid black;
+	padding:2vh 2vw 2vh 2vw;
+	float: left;
+}
+
+.product_description_input{
+	width:70vw;
+	margin-top:2vh;
+	margin-left:50%;
+	transform: translate(-50%,0);
+	font-family: verdana;
+	outline: none;
+	border-radius: 10px black;
+	border:4px solid black;
+	padding:2vh 2vw 2vh 2vw;
+	float: left;
+}
+
+.products_area{
+	height:auto;
+	width:100vw;
+	margin-top:10vh;
+	float: left;
+	padding:2vh 0 2vh 0;
+}
+
+.product{
+	height:65vh;
+	width:20vw;
+  	margin: 10vh 2.3vw 10vh 2.3vw;
+  	float:left;
+  	cursor: pointer;
+}
+
+.delete_product_btn{
+	position: relative;
+	top: 10vh;
+	left:80%;
+	height:2em;
+	width:2em;
+	padding:1em 1em 1em 1em;
+	border-radius: 50%;
+	background:black;
+	color:white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.image{
+	height:50vh;
+	width:20vw;
+/*	background:#DBDBDB;*/
+	background-position: left center;
+}
+
+.product_name{
+	height:auto;
+	width:20vw;
+	padding:2vh 0 2vh 0;
+	font-family: verdana;
+	float: left;
+}
+
+.price{
+	height:auto;
+	width:20vw;
+	font-family: verdana;
+	float: left;
+	font-size: 25px ;
+	font-weight: 525;
+}
+
+
+
+@media(max-width:991px){
+
+
+	.add_new_product_btn{
+		background:black;
+		color:white;
+		padding:2vh 5vw 2vh 5vw;
+	}
+
+	.close_input_Area_btn{
+		padding:0 5vw 0 5vw;
+		right:5vw;
+		border-radius: 0;
+	}
+
+
+	.products_area{
+		margin-top:20vh;
+	}
+
+	.product{
+		height:45vh;
+		width:45vw;
+	  margin: 2vh 2.5vw 2vh 2.5vw;
+	}
+
+	.delete_product_btn{
+		height:1em;
+		width:1em;
+		left:70%;
+	}
+
+	.image{
+		height:35vh;
+		width:45vw;
+		background-position: center center;
+	}
+
+	.product_name{
+		width:45vw;
+	}
+
+	.price{
+		width:45vw;
+	}
+}
