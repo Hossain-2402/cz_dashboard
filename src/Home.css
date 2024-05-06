@@ -5,7 +5,7 @@
 
 .header{
 	height: 100vh;
-	margin:2vh 0 2vh 0;
+	margin:2vh 0 0 0;
 	width:100vw;
 	background:#6D6D6D;
 	z-index:1;
@@ -61,7 +61,6 @@
 .products_area{
 	height:auto;
 	width:100vw;
-	padding:2vh 0 2vh 0;
 }
 
 .product{
@@ -134,7 +133,7 @@
 .leading_image{
 	height:65vh;
 	width:45vw;
-/*	background:#6D6D6D;*/
+	background-size: 50%;
 	float: left;
 }
 
@@ -367,7 +366,9 @@
 		text-align: left;
 		font-size: 15px;
 	}
-
+	.products_area{
+		padding:0;
+	}
 	.product{
 		height:45vh;
 		width:45vw;
@@ -404,6 +405,7 @@
 	.leading_image{
 		height:32vh;
 		width:90vw;
+		background-size: 75%;
 	}
 
 	.secondary_image{

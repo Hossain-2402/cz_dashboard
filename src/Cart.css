@@ -7,7 +7,7 @@
 	height:70vh;
 	width:80vw;
 	color:grey;
-	margin-top:5vh;
+	margin-top:15%;
 	margin-left:50%;
 	transform: translate(-50%,0);
 	display: flex;
@@ -115,19 +115,21 @@
 .second_image{
 	height:10vh;
 	flex:1;
-	background: #4d4d4d;
 }
 
 .third_image{
 	height:10vh;
 	flex:1;
-	background: #4d4d4d;
 }
 
 .forth_image{
 	height:10vh;
 	flex:1;
-	background: #4d4d4d;
+}
+
+.fifth_image{
+	height:10vh;
+	flex:1;
 }
 
 .detail_info_area{
@@ -283,7 +285,7 @@
 
 	.no_item_display_area{
 		width:95;
-		margin-top: 10vh;
+		margin-top: 50%;
 		font-size: 20px;
 	}
 
@@ -329,6 +331,7 @@
 	.leading_image{
 		height:32vh;
 		width:90vw;
+		background-size: 75%;
 	}
 
 	.secondary_image{
@@ -350,6 +353,10 @@
 	}
 
 	.forth_image{
+		height:7vh;
+	}
+
+	.fifth_image{
 		height:7vh;
 	}
 

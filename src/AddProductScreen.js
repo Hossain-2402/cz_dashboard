@@ -31,6 +31,7 @@ function AddProductScreen() {
     db.collection('products').add(
       {
         product_name : "Product Name",
+        product_price : "55",
         product_detail :productDetail,
         leading_image : leadingImage,
         first_image : firstImage,

@@ -18,6 +18,7 @@ function Cart() {
   const [xl_btn_background_color,set_xl_btn_background_color] = useState("white");
   const [currentItem,setCurrentItem] = useState({
         product_name : "Product Name",
+        product_price : "55",
         product_detail : " Product detail" ,
         leading_image : "Some Image",
         first_image : "first image",
@@ -75,9 +76,26 @@ function Cart() {
 
 
 
+  const showLeadingImage_leading = (image)=>{
+    setTempLeadingImage(image);
+  }
+
   const showLeadingImage_first = (image)=>{
     setTempLeadingImage(image);
   }
+
+  const showLeadingImage_second = (image)=>{
+    setTempLeadingImage(image);
+  }
+
+  const showLeadingImage_third = (image)=>{
+    setTempLeadingImage(image);
+  }
+
+  const showLeadingImage_forth = (image)=>{
+    setTempLeadingImage(image);
+  }
+
 
   return (
     <div className="Cart">
@@ -87,32 +105,16 @@ function Cart() {
         <div  className="detail_image_area">
           <div style={{ backgroundImage: "url("+tempLeadingImage+")"}} className="leading_image"></div>
           <div className="secondary_image">
-            <div style={{ backgroundImage: "url("+currentItem.first_image+")",backgroundRepeat : 'no-repeat',backgroundSize : 'cover',backgroundPosition : 'center center'}} className="first_image" onClick={()=>{showLeadingImage_first(currentItem.first_image)}}></div>
-            <div className="second_image"></div>
-            <div className="third_image"></div>
-            <div className="forth_image"></div>
-          </div>
-        </div>
+            <div style={{ backgroundImage: "url("+currentItem.leading_image+")",backgroundRepeat : 'no-repeat',backgroundSize : 'cover',backgroundPosition : 'center center'}} className="first_image" onClick={()=>{showLeadingImage_leading(currentItem.leading_image)}}></div>
+            <div style={{ backgroundImage: "url("+currentItem.first_image+")",backgroundRepeat : 'no-repeat',backgroundSize : 'cover',backgroundPosition : 'center center'}} className="second_image" onClick={()=>{showLeadingImage_first(currentItem.first_image)}}></div>
+            <div style={{ backgroundImage: "url("+currentItem.second_image+")",backgroundRepeat : 'no-repeat',backgroundSize : 'cover',backgroundPosition : 'center center'}} className="third_image" onClick={()=>{showLeadingImage_second(currentItem.second_image)}}></div>
+            <div style={{ backgroundImage: "url("+currentItem.third_image+")",backgroundRepeat : 'no-repeat',backgroundSize : 'cover',backgroundPosition : 'center center'}} className="forth_image" onClick={()=>{showLeadingImage_third(currentItem.third_image)}}></div>
+            <div style={{ backgroundImage: "url("+currentItem.forth_image+")",backgroundRepeat : 'no-repeat',backgroundSize : 'cover',backgroundPosition : 'center center'}} className="fifth_image" onClick={()=>{showLeadingImage_forth(currentItem.forth_image)}}></div>
+          </div></div>
         <div className="detail_info_area">
-          <div className="detail_product_name">Product Name</div>
-          <div className="detail_price">$55</div>
-          <div className="detail_info">The term business refers to an organization or enterprising entity engaged in commercial, 
-              industrial, or professional activities. The purpose of a business is to organize some sort of economic production 
-              of goods or services. Businesses can be for-profit entities or non-profit organizations fulfilling a charitable mission or
-              furthering a social cause. Businesses range in scale and scope from sole proprietorships to large, international corporations.The term business refers to an organization or enterprising entity engaged in commercial, 
-              industrial, or professional activities. The purpose of a business is to organize some sort of economic production 
-              of goods or services. Businesses can be for-profit entities or non-profit organizations fulfilling a charitable mission or
-              furthering a social cause. Businesses range in scale and scope from sole proprietorships to large, international corporations.The term business refers to an organization or enterprising entity engaged in commercial, 
-              industrial, or professional activities. The purpose of a business is to organize some sort of economic production 
-              of goods or services. Businesses can be for-profit entities or non-profit organizations fulfilling a charitable mission or
-              furthering a social cause. Businesses range in scale and scope from sole proprietorships to large, international corporations.
-
-
-              furthering a social cause. Businesses range in scale and scope from sole proprietorships to large, international corporations.The term business refers to an organization or enterprising entity engaged in commercial, 
-              industrial, or professional activities. The purpose of a business is to organize some sort of economic production 
-              of goods or services. Businesses can be for-profit entities or non-profit organizations fulfilling a charitable mission or
-              furthering a social cause. Businesses range in scale and scope from sole proprietorships to large, international corporations.
-          </div>
+          <div className="detail_product_name">{currentItem.product_name}</div>
+          <div className="detail_price">${currentItem.product_price}</div>
+          <div className="detail_info">{currentItem.product_detail}</div>
           <div className="sizes_header_text">Your Size : {tempSize}</div>
           <div className="sizes_area">
             <div style={{ background: small_btn_background_color}} className="small_size_btn" onClick={()=>{smallSize()}}>S</div>
@@ -134,8 +136,8 @@ function Cart() {
           {items.map((item,index) =>{
             return <div key={index} className="product" onClick={()=>{showDetailArea(item,index)}}>
               <div style={{ backgroundImage: "url("+item.leading_image+")",backgroundRepeat : 'no-repeat',backgroundSize : '85%'}}  className="image"></div>
-              <div className="product_name">Product Name</div>
-              <div className="price">$55</div>
+              <div className="product_name">{item.product_name}</div>
+              <div className="price">${item.product_price}</div>
             </div>
           })}
         </div>

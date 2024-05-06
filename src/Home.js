@@ -14,6 +14,7 @@ function Home() {
 
   const [tempCurrentItem,setTempCurrentItem] = useState({
         product_name : "Product Name",
+        product_price : "55",
         product_detail : " Product detail" ,
         leading_image : "Some Image",
         first_image : "first image",
@@ -97,7 +98,7 @@ const showLeadingImage_forth = (image)=>{
       <div style={{ left: positionOfDetailArea}} className="detail_of_product_area">
         <div className="close_detail_Area_btn" onClick={()=>{hideDetailArea()}}><i class="fa fa-times" ></i> </div>
         <div  className="detail_image_area">
-          <div style={{ backgroundImage: "url("+tempLeadingImage+")",backgroundRepeat : 'no-repeat',backgroundSize : '50%',backgroundPosition : 'center center'}} className="leading_image"></div>
+          <div style={{ backgroundImage: "url("+tempLeadingImage+")",backgroundRepeat : 'no-repeat',backgroundPosition : 'center center'}} className="leading_image"></div>
           <div className="secondary_image">
             <div style={{ backgroundImage: "url("+tempCurrentItem.leading_image+")",backgroundRepeat : 'no-repeat',backgroundSize : 'cover',backgroundPosition : 'center center'}} className="first_image" onClick={()=>{showLeadingImage_leading(tempCurrentItem.leading_image)}}></div>
             <div style={{ backgroundImage: "url("+tempCurrentItem.first_image+")",backgroundRepeat : 'no-repeat',backgroundSize : 'cover',backgroundPosition : 'center center'}} className="second_image" onClick={()=>{showLeadingImage_first(tempCurrentItem.first_image)}}></div>
@@ -107,8 +108,8 @@ const showLeadingImage_forth = (image)=>{
           </div>
         </div>
         <div className="detail_info_area">
-          <div className="detail_product_name">Product Name</div>
-          <div className="detail_price">$55</div>
+          <div className="detail_product_name">{tempCurrentItem.product_name}</div>
+          <div className="detail_price">${tempCurrentItem.product_price}</div>
           <div className="detail_info">{tempCurrentItem.product_detail}</div>
           <div className="add_to_cart_btn" onClick={()=>{addItemToCart()}}>Add to cart</div>
         </div>
@@ -124,8 +125,8 @@ const showLeadingImage_forth = (image)=>{
         {products.map((item,index) =>{
           return <div key={index} className="product" onClick={()=>{showDetailArea(item)}}>
             <div style={{ backgroundImage: "url("+item.leading_image+")",backgroundRepeat : 'no-repeat',backgroundSize : '85%'}}  className="image"></div>
-            <div className="product_name">Product Name</div>
-            <div className="price">$55</div>
+            <div className="product_name">{item.product_name}</div>
+            <div className="price">${item.product_price}</div>
           </div>
         })}
       </div>
