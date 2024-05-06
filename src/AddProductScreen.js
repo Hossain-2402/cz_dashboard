@@ -39,7 +39,7 @@ function AddProductScreen() {
         third_image : thirdImage,
         forth_image : forthImage,
         quantity : 1,
-        sizes : "s",
+        sizes : "S",
         timestamp : firebase.firestore.FieldValue.serverTimestamp()
     }) ;
   }
@@ -88,13 +88,17 @@ function AddProductScreen() {
     <div className="AddProductScreen">
       <div style={{ left: positionOfInputArea}}  className="new_product_input_area">
         <div className="close_input_Area_btn" onClick={()=>{hideInputArea()}}><i class="fa fa-times" ></i> </div>
+        <div className="input_image_area">
+          <input type="text" className="leading_image_input" placeholder="Leading Image " onChange={(e)=>{handle_leading_image(e)}} value={leadingImage} />
+          <div className="four_images">
+            <input type="text" className="first_image_input" placeholder="FIRST Image " onChange={(e)=>{handle_first_image(e)}} value={firstImage} />
+            <input type="text" className="second_image_input" placeholder="SECOND Image " onChange={(e)=>{handle_second_image(e)}} value={secondImage} />
+            <input type="text" className="third_image_input" placeholder="THIRD Image " onChange={(e)=>{handle_third_image(e)}} value={thirdImage} />
+            <input type="text" className="forth_image_input" placeholder="FORTH Image " onChange={(e)=>{handle_forth_image(e)}} value={forthImage} />
+          </div>
+        </div>
         <input type="text" className="product_name_input" placeholder="Enter product name" />
         <input type="text" className="product_price_input" placeholder="Enter product price" />
-        <input type="text" className="leading_image_input" placeholder="Enter leading Image Link" onChange={(e)=>{handle_leading_image(e)}} value={leadingImage} />
-        <input type="text" className="first_image_input" placeholder="Enter FIRST Image Link" onChange={(e)=>{handle_first_image(e)}} value={firstImage} />
-        <input type="text" className="second_image_input" placeholder="Enter SECOND Image Link" onChange={(e)=>{handle_second_image(e)}} value={secondImage} />
-        <input type="text" className="third_image_input" placeholder="Enter THIRD Image Link" onChange={(e)=>{handle_third_image(e)}} value={thirdImage} />
-        <input type="text" className="forth_image_input" placeholder="Enter FORTH Image Link" onChange={(e)=>{handle_forth_image(e)}} value={forthImage} />
         <textarea type="text" className="product_description_input" placeholder="Enter Image Desctiption" onChange={(e)=>{handle_product_detail(e)}} value={productDetail}> </textarea>
         <div className="add_product_btn" onClick={()=>{addNewProductToDB()}}>Add Product</div>
       </div>
@@ -104,8 +108,8 @@ function AddProductScreen() {
           return <div key={index} className="product" >
             <div className="delete_product_btn" onClick={()=>{ deleteItem(item) }}><i class="fa fa-times" ></i> </div>
             <div style={{ backgroundImage: "url("+item.leading_image+")",backgroundRepeat : 'no-repeat',backgroundSize : '85%'}}  className="image"></div>
-            <div className="product_name">Product Name</div>
-            <div className="price">$55</div>
+            <div className="product_name">{item.product_name}</div>
+            <div className="price">৳ {item.product_price}</div>
           </div>
         })}
       </div>

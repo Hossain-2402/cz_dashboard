@@ -22,7 +22,7 @@ function Home() {
         third_image : "third image",
         forth_image : "forth image",
         quantity : 1,
-        sizes : "s",
+        sizes : "S",
         timestamp : firebase.firestore.FieldValue.serverTimestamp()});
 
   const [tempLeadingImage,setTempLeadingImage] = useState("https://scontent.fdac41-1.fna.fbcdn.net/v/t39.30808-6/438216908_990245046437412_764419811823206966_n.jpg?stp=cp6_dst-jpg&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=4kFdMbs7jXwAb6jmRp9&_nc_ht=scontent.fdac41-1.fna&oh=00_AfBc9w3xDgUjGjP9zpoY-cri1zMj7RcFkrXVFmzdB7R3OQ&oe=6636DC71");
@@ -64,9 +64,6 @@ function Home() {
 }
 
 
-const showLeadingImage = (image)=>{
-  setTempLeadingImage(image);
-}
 
 const showLeadingImage_leading = (image)=>{
   setTempLeadingImage(image);
@@ -98,7 +95,7 @@ const showLeadingImage_forth = (image)=>{
       <div style={{ left: positionOfDetailArea}} className="detail_of_product_area">
         <div className="close_detail_Area_btn" onClick={()=>{hideDetailArea()}}><i class="fa fa-times" ></i> </div>
         <div  className="detail_image_area">
-          <div style={{ backgroundImage: "url("+tempLeadingImage+")",backgroundRepeat : 'no-repeat',backgroundPosition : 'center center'}} className="leading_image"></div>
+          <div style={{ backgroundImage: "url("+tempLeadingImage+")",backgroundRepeat : 'no-repeat',backgroundSize : "50%",backgroundPosition : 'center center'}} className="leading_image"></div>
           <div className="secondary_image">
             <div style={{ backgroundImage: "url("+tempCurrentItem.leading_image+")",backgroundRepeat : 'no-repeat',backgroundSize : 'cover',backgroundPosition : 'center center'}} className="first_image" onClick={()=>{showLeadingImage_leading(tempCurrentItem.leading_image)}}></div>
             <div style={{ backgroundImage: "url("+tempCurrentItem.first_image+")",backgroundRepeat : 'no-repeat',backgroundSize : 'cover',backgroundPosition : 'center center'}} className="second_image" onClick={()=>{showLeadingImage_first(tempCurrentItem.first_image)}}></div>
@@ -109,7 +106,7 @@ const showLeadingImage_forth = (image)=>{
         </div>
         <div className="detail_info_area">
           <div className="detail_product_name">{tempCurrentItem.product_name}</div>
-          <div className="detail_price">${tempCurrentItem.product_price}</div>
+          <div className="detail_price">৳ {tempCurrentItem.product_price}</div>
           <div className="detail_info">{tempCurrentItem.product_detail}</div>
           <div className="add_to_cart_btn" onClick={()=>{addItemToCart()}}>Add to cart</div>
         </div>
@@ -126,7 +123,7 @@ const showLeadingImage_forth = (image)=>{
           return <div key={index} className="product" onClick={()=>{showDetailArea(item)}}>
             <div style={{ backgroundImage: "url("+item.leading_image+")",backgroundRepeat : 'no-repeat',backgroundSize : '85%'}}  className="image"></div>
             <div className="product_name">{item.product_name}</div>
-            <div className="price">${item.product_price}</div>
+            <div className="price">৳ {item.product_price}</div>
           </div>
         })}
       </div>

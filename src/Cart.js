@@ -12,10 +12,7 @@ function Cart() {
   const [tempIndex,setTempIndex] = useState();  
   const [tempQuantity,setTempQuantity] = useState(1);
   const [tempSize,setTempSize] = useState("");
-  const [small_btn_background_color,set_small_btn_background_color] = useState("white");
-  const [medium_btn_background_color,set_medium_btn_background_color] = useState("white");
-  const [large_btn_background_color,set_large_btn_background_color] = useState("white");
-  const [xl_btn_background_color,set_xl_btn_background_color] = useState("white");
+
   const [currentItem,setCurrentItem] = useState({
         product_name : "Product Name",
         product_price : "55",
@@ -26,7 +23,7 @@ function Cart() {
         third_image : "third image",
         forth_image : "forth image",
         quantity : 1,
-        sizes : "s",
+        sizes : "S",
         timestamp : firebase.firestore.FieldValue.serverTimestamp()});
 
 
@@ -103,7 +100,7 @@ function Cart() {
       <div style={{ left: positionOfDetailArea}} className="detail_of_product_area">
         <div className="close_detail_Area_btn" onClick={()=>{hideDetailArea()}}><i class="fa fa-times" ></i> </div>
         <div  className="detail_image_area">
-          <div style={{ backgroundImage: "url("+tempLeadingImage+")"}} className="leading_image"></div>
+          <div style={{ backgroundImage: "url("+tempLeadingImage+")",backgroundRepeat: "no-repeat",backgroundSize : "50%",backgroundPosition : 'center center'}} className="leading_image"></div>
           <div className="secondary_image">
             <div style={{ backgroundImage: "url("+currentItem.leading_image+")",backgroundRepeat : 'no-repeat',backgroundSize : 'cover',backgroundPosition : 'center center'}} className="first_image" onClick={()=>{showLeadingImage_leading(currentItem.leading_image)}}></div>
             <div style={{ backgroundImage: "url("+currentItem.first_image+")",backgroundRepeat : 'no-repeat',backgroundSize : 'cover',backgroundPosition : 'center center'}} className="second_image" onClick={()=>{showLeadingImage_first(currentItem.first_image)}}></div>
@@ -113,14 +110,14 @@ function Cart() {
           </div></div>
         <div className="detail_info_area">
           <div className="detail_product_name">{currentItem.product_name}</div>
-          <div className="detail_price">${currentItem.product_price}</div>
+          <div className="detail_price">৳ {currentItem.product_price}</div>
           <div className="detail_info">{currentItem.product_detail}</div>
           <div className="sizes_header_text">Your Size : {tempSize}</div>
           <div className="sizes_area">
-            <div style={{ background: small_btn_background_color}} className="small_size_btn" onClick={()=>{smallSize()}}>S</div>
-            <div style={{ background: medium_btn_background_color}} className="medium_size_btn" onClick={()=>{mediumSize()}}>M</div>
-            <div style={{ background: large_btn_background_color}} className="large_size_btn" onClick={()=>{largeSize()}}>L</div>
-            <div style={{ background: xl_btn_background_color}} className="xl_size_btn" onClick={()=>{xlSize()}}>XL</div>
+            <div className="small_size_btn" onClick={()=>{smallSize()}}>S</div>
+            <div className="medium_size_btn" onClick={()=>{mediumSize()}}>M</div>
+            <div className="large_size_btn" onClick={()=>{largeSize()}}>L</div>
+            <div className="xl_size_btn" onClick={()=>{xlSize()}}>XL</div>
           </div>
 
           {/*<div className="quantity_header_text">Quantity</div>*/}
@@ -137,7 +134,7 @@ function Cart() {
             return <div key={index} className="product" onClick={()=>{showDetailArea(item,index)}}>
               <div style={{ backgroundImage: "url("+item.leading_image+")",backgroundRepeat : 'no-repeat',backgroundSize : '85%'}}  className="image"></div>
               <div className="product_name">{item.product_name}</div>
-              <div className="price">${item.product_price}</div>
+              <div className="price">৳ {item.product_price}</div>
             </div>
           })}
         </div>

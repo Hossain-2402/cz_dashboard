@@ -2,7 +2,6 @@
 	margin-top:10vh;
 }
 
-
 .add_new_product_btn{
   border:2px solid white;
   background:white;
@@ -20,11 +19,11 @@
   cursor:pointer;
   transition: .2s;
 }
+
 .add_new_product_btn:hover{
   background:black;
   color:white;
 }
-
 
 .new_product_input_area{
 	position:fixed;
@@ -35,7 +34,6 @@
 	background:white;
 	transition:.5s ease-in-out;
 }
-
 
 .close_input_Area_btn{
   height:5vh;
@@ -51,13 +49,90 @@
   justify-content: center;
   align-items: center;
   cursor:pointer;
+  z-index: 100;
+}
+
+.input_image_area{
+	margin-top: 5vh;
+	height:45vh;
+	width:100vw;
+}
+
+.leading_image_input{
+	height:50%;
+	width:25%;
+	margin-top:2vh;
+	margin-left:50%;
+	transform: translate(-50%,0);
+	font-family: verdana;
+	outline: none;
+	border-radius: 10px black;
+	border:4px solid black;
+	padding:2vh 2vw 2vh 2vw;
+	float: left;
+}
+
+.four_images{
+	height:20%;
+	width:80%;
+	margin-left:50%;
+	transform: translate(-50%,0);
+	float: left;
+	gap:1vw;
+}
+
+.first_image_input{
+	height:5vh;
+	width:20%;
+	margin:1% 1vw 0 1%;
+	font-family: verdana;
+	outline: none;
+	border-radius: 10px black;
+	border:4px solid black;
+	padding:0 0 0 1vw;
+	float: left;
+}
+
+.second_image_input{
+	height:5vh;
+	width:20%;
+	margin:1% 1vw 0 1%;
+	font-family: verdana;
+	outline: none;
+	border-radius: 10px black;
+	border:4px solid black;
+	padding:0 0 0 1vw;
+	float: left;
+}
+
+.third_image_input{
+	height:5vh;
+	width:20%;
+	margin:1% 1vw 0 1%;
+	font-family: verdana;
+	outline: none;
+	border-radius: 10px black;
+	border:4px solid black;
+	padding:0 0 0 1vw;
+	float: left;
+}
+
+.forth_image_input{
+	height:5vh;
+	width:20%;
+	margin:1% 1vw 0 1%;
+	font-family: verdana;
+	outline: none;
+	border-radius: 10px black;
+	border:4px solid black;
+	padding:0 0 0 1vw;
+	float: left;
 }
 
 .product_name_input{
-	width:70vw;
-	margin-top:10vh;
-	margin-left:50%;
-	transform: translate(-50%,0);
+	width:60vw;
+	margin-top:5vh;
+	margin-left:2vw;
 	font-family: verdana;
 	outline: none;
 	border-radius: 10px black;
@@ -67,74 +142,9 @@
 }
 
 .product_price_input{
-	width:70vw;
+	width:60vw;
 	margin-top:2vh;
-	margin-left:50%;
-	transform: translate(-50%,0);
-	font-family: verdana;
-	outline: none;
-	border-radius: 10px black;
-	border:4px solid black;
-	padding:2vh 2vw 2vh 2vw;
-	float: left;
-}
-
-.leading_image_input{
-	width:70vw;
-	margin-top:2vh;
-	margin-left:50%;
-	transform: translate(-50%,0);
-	font-family: verdana;
-	outline: none;
-	border-radius: 10px black;
-	border:4px solid black;
-	padding:2vh 2vw 2vh 2vw;
-	float: left;
-}
-
-.first_image_input{
-	width:70vw;
-	margin-top:2vh;
-	margin-left:50%;
-	transform: translate(-50%,0);
-	font-family: verdana;
-	outline: none;
-	border-radius: 10px black;
-	border:4px solid black;
-	padding:2vh 2vw 2vh 2vw;
-	float: left;
-}
-
-.second_image_input{
-	width:70vw;
-	margin-top:2vh;
-	margin-left:50%;
-	transform: translate(-50%,0);
-	font-family: verdana;
-	outline: none;
-	border-radius: 10px black;
-	border:4px solid black;
-	padding:2vh 2vw 2vh 2vw;
-	float: left;
-}
-
-.third_image_input{
-	width:70vw;
-	margin-top:2vh;
-	margin-left:50%;
-	transform: translate(-50%,0);
-	font-family: verdana;
-	outline: none;
-	border-radius: 10px black;
-	border:4px solid black;
-	padding:2vh 2vw 2vh 2vw;
-	float: left;
-}
-
-.forth_image_input{	width:70vw;
-	margin-top:2vh;
-	margin-left:50%;
-	transform: translate(-50%,0);
+	margin-left:2vw;
 	font-family: verdana;
 	outline: none;
 	border-radius: 10px black;
@@ -144,10 +154,9 @@
 }
 
 .product_description_input{
-	width:70vw;
+	width:90vw;
 	margin-top:2vh;
-	margin-left:50%;
-	transform: translate(-50%,0);
+	margin-left:2vw;
 	font-family: verdana;
 	outline: none;
 	border-radius: 10px black;
@@ -161,7 +170,7 @@
 	background:black;
 	color:white;
 	border:2px solid black;
-	margin-top:5vh;
+	margin-top:2vh;
 	margin-left: 50%;
 	transform: translate(-50%,0);
 	padding:2vh 10vw 2vh 10vw;
@@ -247,15 +256,53 @@
 		border-radius: 0;
 	}
 
+	.input_image_area{
+		margin-top: 7vh;
+	}
+
+	.leading_image_input{
+		width:70%;
+	}
+
+	.four_images{
+		width:90%;
+		margin-top: 2vh;
+		display: grid;
+		gap:5vw;
+		grid-template-columns: 50% 50% ;
+		margin-left: 50%;
+		transform: translate(-50%,0);
+	}
+
+	.first_image_input{
+		width:80%;
+		margin:0;
+		border-radius: 10px;
+	}
+	.second_image_input{
+		width:80%;
+		margin:0;
+		border-radius: 10px;
+	}
+	.third_image_input{
+		width:80%;
+		margin:0;
+		border-radius: 10px;
+	}
+	.forth_image_input{
+		width:80%;
+		margin:0;
+		border-radius: 10px;
+	}
 
 	.products_area{
-		margin-top:20vh;
+		margin-top:5vh;
 	}
 
 	.product{
 		height:45vh;
 		width:45vw;
-	  margin: 2vh 2.5vw 2vh 2.5vw;
+	  	margin: 2vh 2.5vw 2vh 2.5vw;
 	}
 
 	.delete_product_btn{

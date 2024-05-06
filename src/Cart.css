@@ -1,5 +1,5 @@
 .Cart{
-	margin-top:-10vh;
+/*	margin-top:-10vh;*/
 }
 
 .no_item_display_area{
@@ -91,12 +91,8 @@
 .leading_image{
 	height:65vh;
 	width:45vw;
-	background-repeat:no-repeat ;
-	background-size: 50%;
-	background-position:center center ;
 	float: left;
 }
-
 
 .secondary_image{
 	height:10vh;
@@ -281,7 +277,9 @@
 
 
 @media(max-width:991px){
-
+	.Cart{
+		margin-top: 0vh;
+	}
 
 	.no_item_display_area{
 		width:95;
@@ -331,7 +329,6 @@
 	.leading_image{
 		height:32vh;
 		width:90vw;
-		background-size: 75%;
 	}
 
 	.secondary_image{
