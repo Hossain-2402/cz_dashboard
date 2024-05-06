@@ -1,6 +1,7 @@
 import {useSelector} from "react-redux";
 import "./Cart.css";
 import {useState} from "react";
+import firebase from "firebase/compat/app";
 
 function Cart() {
 
@@ -15,6 +16,18 @@ function Cart() {
   const [medium_btn_background_color,set_medium_btn_background_color] = useState("white");
   const [large_btn_background_color,set_large_btn_background_color] = useState("white");
   const [xl_btn_background_color,set_xl_btn_background_color] = useState("white");
+  const [currentItem,setCurrentItem] = useState({
+        product_name : "Product Name",
+        product_detail : " Product detail" ,
+        leading_image : "Some Image",
+        first_image : "first image",
+        second_image : "second image",
+        third_image : "third image",
+        forth_image : "forth image",
+        quantity : 1,
+        sizes : "s",
+        timestamp : firebase.firestore.FieldValue.serverTimestamp()});
+
 
 
 
@@ -24,6 +37,7 @@ function Cart() {
     setTempIndex(index);
     setTempQuantity(item.quantity);
     setTempSize(item.sizes);
+    setCurrentItem(item)
   }
   const hideDetailArea = ()=>{
     setPositionOfDetailArea("-200vw");
@@ -59,6 +73,12 @@ function Cart() {
     setTempSize("XL");
   }
 
+
+
+  const showLeadingImage_first = (image)=>{
+    setTempLeadingImage(image);
+  }
+
   return (
     <div className="Cart">
 
@@ -67,7 +87,7 @@ function Cart() {
         <div  className="detail_image_area">
           <div style={{ backgroundImage: "url("+tempLeadingImage+")"}} className="leading_image"></div>
           <div className="secondary_image">
-            <div className="first_image"></div>
+            <div style={{ backgroundImage: "url("+currentItem.first_image+")",backgroundRepeat : 'no-repeat',backgroundSize : 'cover',backgroundPosition : 'center center'}} className="first_image" onClick={()=>{showLeadingImage_first(currentItem.first_image)}}></div>
             <div className="second_image"></div>
             <div className="third_image"></div>
             <div className="forth_image"></div>
@@ -101,7 +121,7 @@ function Cart() {
             <div style={{ background: xl_btn_background_color}} className="xl_size_btn" onClick={()=>{xlSize()}}>XL</div>
           </div>
 
-          <div className="quantity_header_text">Quantity</div>
+          {/*<div className="quantity_header_text">Quantity</div>*/}
           <div className="quantity_area">
             <div className="decrease_auantity_btn" onClick={()=>{decreaseQuantity()}}>-</div>
             <div className="quantity">{tempQuantity}</div>

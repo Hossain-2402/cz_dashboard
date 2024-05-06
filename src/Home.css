@@ -150,25 +150,31 @@
 .first_image{
 	height:10vh;
 	flex:1;
-	background: #4d4d4d;
+	cursor:pointer;
 }
 
 .second_image{
 	height:10vh;
 	flex:1;
-	background: #4d4d4d;
+	cursor:pointer;
 }
 
 .third_image{
 	height:10vh;
 	flex:1;
-	background: #4d4d4d;
+	cursor:pointer;
 }
 
 .forth_image{
 	height:10vh;
 	flex:1;
-	background: #4d4d4d;
+	cursor:pointer;
+}
+
+.fifth_image{
+	height:10vh;
+	flex:1;
+	cursor:pointer;
 }
 
 .detail_info_area{
@@ -220,6 +226,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  outline:none;
   cursor:pointer;
 }
 
@@ -241,7 +248,7 @@
 .logo_a{
   height:5vh;
   width:1vw;
-	flex:1;
+	flex:.5;
   color:black;
   font-size: 25px;
   font-weight: 700;
@@ -250,11 +257,6 @@
   justify-content: center;
   align-items: center;
   cursor:pointer;
-}
-
-.nev{
-	height:5vh;
-	flex:5;
 }
 
 .socials{
@@ -423,6 +425,10 @@
 	}
 
 	.forth_image{
+		height:7vh;
+	}
+
+	.fifth_image{
 		height:7vh;
 	}
 
