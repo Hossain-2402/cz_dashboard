@@ -101,7 +101,7 @@
 	width:100vw;
 	background: white;
 	box-shadow: 0 0 100px black;
-	top:2.5vh;
+	top:0;
 	z-index: 100;
 	transition:.4s;
 }
@@ -133,6 +133,7 @@
 .leading_image{
 	height:65vh;
 	width:45vw;
+	background-size: 50%;
 	float: left;
 }
 
@@ -394,11 +395,14 @@
 			}
 
 			.detail_of_product_area{
+				height:100vh;
+				overflow-x: hidden;
+				overflow-y: scroll;
 				top:0;
 			}
 
 			.detail_image_area{
-				height:40vh;
+				height:70vh;
 				width:90vw;
 				margin-top:0vh;
 				margin-left:50%;
@@ -406,34 +410,35 @@
 			}
 
 			.leading_image{
-				height:32vh;
+				height:80%;
+				background-size: 70%;
 				width:90vw;
 			}
 
 			.secondary_image{
-				height:7vh;
-				width:70vw;
+				height:15%;
+				width:95%;
 				margin-top: 1vh;
 			}
 
 			.first_image{
-				height:7vh;
+				height:100%;
 			}
 
 			.second_image{
-				height:7vh;
+				height:100%;
 			}
 
 			.third_image{
-				height:7vh;
+				height:100%;
 			}
 
 			.forth_image{
-				height:7vh;
+				height:100%;
 			}
 
 			.fifth_image{
-				height:7vh;
+				height:100%;
 			}
 
 			.detail_info_area{

@@ -95,7 +95,7 @@ const showLeadingImage_forth = (image)=>{
       <div style={{ left: positionOfDetailArea}} className="detail_of_product_area">
         <div className="close_detail_Area_btn" onClick={()=>{hideDetailArea()}}><i class="fa fa-times" ></i> </div>
         <div  className="detail_image_area">
-          <div style={{ backgroundImage: "url("+tempLeadingImage+")",backgroundRepeat : 'no-repeat',backgroundSize : "50%",backgroundPosition : 'center center'}} className="leading_image"></div>
+          <div style={{ backgroundImage: "url("+tempLeadingImage+")",backgroundRepeat : 'no-repeat',backgroundPosition : 'center center'}} className="leading_image"></div>
           <div className="secondary_image">
             <div style={{ backgroundImage: "url("+tempCurrentItem.leading_image+")",backgroundRepeat : 'no-repeat',backgroundSize : 'cover',backgroundPosition : 'center center'}} className="first_image" onClick={()=>{showLeadingImage_leading(tempCurrentItem.leading_image)}}></div>
             <div style={{ backgroundImage: "url("+tempCurrentItem.first_image+")",backgroundRepeat : 'no-repeat',backgroundSize : 'cover',backgroundPosition : 'center center'}} className="second_image" onClick={()=>{showLeadingImage_first(tempCurrentItem.first_image)}}></div>
