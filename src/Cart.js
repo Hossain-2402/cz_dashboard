@@ -1,5 +1,5 @@
-import {useSelector} from "react-redux";
 import "./Cart.css";
+import {useSelector} from "react-redux";
 import {useState} from "react";
 import firebase from "firebase/compat/app";
 

@@ -49,19 +49,18 @@
   justify-content: center;
   align-items: center;
   cursor:pointer;
-  z-index: 100;
+  z-index: 110;
 }
 
 .input_image_area{
 	margin-top: 5vh;
-	height:45vh;
+	height:35vh;
 	width:100vw;
 }
 
 .leading_image_input{
 	height:50%;
 	width:25%;
-	margin-top:2vh;
 	margin-left:50%;
 	transform: translate(-50%,0);
 	font-family: verdana;
@@ -257,10 +256,12 @@
 	}
 
 	.input_image_area{
+		height:30vh;
 		margin-top: 7vh;
 	}
 
 	.leading_image_input{
+		height:40%;
 		width:70%;
 	}
 

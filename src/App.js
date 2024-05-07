@@ -39,8 +39,8 @@ const hideMenuArea = ()=>{
           <Link to="/" className="home">
             Home
           </Link>
-          <Link to="/cart" className="about_us">
-            About Us
+          <Link to="/add_a-new_product" className="about_us">
+            Production
           </Link>
         </nav>
         <Routes>
