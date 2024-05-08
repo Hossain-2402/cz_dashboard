@@ -61,6 +61,8 @@ function Home() {
     dispatch(add_to_cart_action(tempNewItemForCart))
   }
 
+  setPositionOfDetailArea("-200vw");
+
 }
 
 
@@ -107,8 +109,9 @@ const showLeadingImage_forth = (image)=>{
         <div className="detail_info_area">
           <div className="detail_product_name">{tempCurrentItem.product_name}</div>
           <div className="detail_price">৳ {tempCurrentItem.product_price}</div>
-          <div className="detail_info">{tempCurrentItem.product_detail}</div>
+          <pre className="detail_info">{tempCurrentItem.product_detail}</pre>
           <div className="add_to_cart_btn" onClick={()=>{addItemToCart()}}>Add to cart</div>
+          <div className="gap"></div>
         </div>
       </div>
 

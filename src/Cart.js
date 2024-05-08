@@ -111,7 +111,7 @@ function Cart() {
         <div className="detail_info_area">
           <div className="detail_product_name">{currentItem.product_name}</div>
           <div className="detail_price">৳ {currentItem.product_price}</div>
-          <div className="detail_info">{currentItem.product_detail}</div>
+          <pre className="detail_info">{currentItem.product_detail}</pre>
           <div className="sizes_header_text">Your Size : {tempSize}</div>
           <div className="sizes_area">
             <div className="small_size_btn" onClick={()=>{smallSize()}}>S</div>
@@ -126,6 +126,7 @@ function Cart() {
             <div className="quantity">{tempQuantity}</div>
             <div className="increase_auantity_btn" onClick={()=>{increaseQuantity()}}>+</div>
           </div>
+          <div className="gap"></div>
         </div>
       </div>
       {items.length === 0 ? <div className="no_item_display_area">Cart is empty</div> :

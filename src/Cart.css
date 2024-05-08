@@ -156,6 +156,7 @@
 }
 
 .detail_info{
+	white-space: pre-wrap;
 	height:40vh;
 	width:45vw;
 	margin-top:2vh;
@@ -163,6 +164,7 @@
 	overflow-y: scroll ;
 	float: left;
 }
+
 
 .sizes_header_text{
 	width:20vw;
@@ -278,6 +280,13 @@
 }
 
 
+.gap{
+	height:5vh;
+	width:20vw;
+	float: left;
+	margin-top: 2vh;
+}
+
 @media(max-width:991px){
 	.Cart{
 		margin-top: 0vh;
@@ -315,7 +324,7 @@
 	}
 
 	.detail_of_product_area{
-		height:70vh;
+		height:90vh;
 		top:50%;
 		transform: translate(0,-50%);
 		box-shadow: 0 0 500px black;
@@ -381,9 +390,11 @@
 		margin-top:0vh;
 	}
 
+
 	.detail_info{
-		height:15vh;
+		height:auto;
 		width:90vw;	
+		padding:2vh 0 2vh 0;
 		margin-top:2vh;
 	}
 
@@ -401,4 +412,5 @@
 		width:40vw;
 		font-size: 10px;
 	}
+
 }
