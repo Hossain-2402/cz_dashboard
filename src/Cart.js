@@ -2,16 +2,24 @@ import "./Cart.css";
 import {useSelector} from "react-redux";
 import {useState} from "react";
 import firebase from "firebase/compat/app";
+import db from "./firebase"
 
 function Cart() {
 
   const items = useSelector(state => state.products);
 
   const [positionOfDetailArea,setPositionOfDetailArea] = useState("-200vw");
+  const [positionOfCustomerInfoArea,setPositionOfCustomerInfoArea] = useState("-200vw");
   const [tempLeadingImage,setTempLeadingImage] = useState("https://scontent.fdac41-1.fna.fbcdn.net/v/t39.30808-6/438216908_990245046437412_764419811823206966_n.jpg?stp=cp6_dst-jpg&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=4kFdMbs7jXwAb6jmRp9&_nc_ht=scontent.fdac41-1.fna&oh=00_AfBc9w3xDgUjGjP9zpoY-cri1zMj7RcFkrXVFmzdB7R3OQ&oe=6636DC71");
   const [tempIndex,setTempIndex] = useState();  
   const [tempQuantity,setTempQuantity] = useState(1);
   const [tempSize,setTempSize] = useState("");
+
+
+  const [customerName,setCustomerName] = useState("");
+  const [customerLocation,setCustomerLocation] = useState("");
+  const [customerNumber,setCustomerNumber] = useState("");
+  const [customerEmail,setCustomerEmail] = useState("");
 
   const [currentItem,setCurrentItem] = useState({
         product_name : "Product Name",
@@ -53,6 +61,31 @@ function Cart() {
 
     }
   }
+  const showDetailInfoArea = ()=>{
+    setPositionOfCustomerInfoArea("0vw");
+  }
+
+  const hideCustomerInfoArea = ()=>{
+    setPositionOfCustomerInfoArea("-200vw");
+  }
+
+
+  const handle_customer_name = (e)=>{
+    setCustomerName(e.target.value);
+  }
+
+  const handle_customer_location = (e)=>{
+    setCustomerLocation(e.target.value);
+  }
+
+  const handle_customer_number = (e)=>{
+    setCustomerNumber(e.target.value);
+  }
+
+  const handle_customer_email = (e)=>{
+    setCustomerEmail(e.target.value);
+  }
+
 
   const smallSize = ()=>{
     items[tempIndex].sizes = "S";
@@ -93,6 +126,21 @@ function Cart() {
     setTempLeadingImage(image);
   }
 
+  const placeAnOrder = ()=>{
+    if(customerName === "" || customerLocation === "" || customerNumber === "" || customerEmail === ""){
+      alert("Fillup the form first");
+    }
+    else{
+      db.collection('Orders').add({ 
+        products: items,
+        customerName: customerName,
+        customerLocation : customerLocation,
+        customerNumber : customerNumber,
+        customerEmail : customerEmail
+      });
+    }
+  }
+
 
   return (
     <div className="Cart">
@@ -130,6 +178,7 @@ function Cart() {
         </div>
       </div>
       {items.length === 0 ? <div className="no_item_display_area">Cart is empty</div> :
+      <div>
         <div className="products_area">
           {items.map((item,index) =>{
             return <div key={index} className="product" onClick={()=>{showDetailArea(item,index)}}>
@@ -139,8 +188,20 @@ function Cart() {
             </div>
           })}
         </div>
-
+        <div className="checkout_btn" onClick={()=>{showDetailInfoArea()}}>Checkout</div>
+        <div className="gap_at_end"></div>
+        <div style={{ left: positionOfCustomerInfoArea}} className="customer_info_area">
+          <div className="customer_info_header">Customer Informations : </div>
+          <div className="close_customer_info_Area_btn" onClick={()=>{hideCustomerInfoArea()}}><i class="fa fa-times" ></i></div>
+          <input type="text" placeholder="Your Name " className="customer_name" onChange={(e)=>{handle_customer_name(e)}} vclue={customerName}/>
+          <textarea type="text" placeholder="Your Location" className="customer_location" onChange={(e)=>{handle_customer_location(e)}} value={customerLocation}></textarea >
+          <input type="text" placeholder="Your Number " className="customer_number" onChange={(e)=>{handle_customer_number(e)}} value={customerNumber}/>
+          <input type="text" placeholder="Your Email " className="customer_email" onChange={(e)=>{handle_customer_email(e)}} value={customerEmail}/>
+          <div className="confirm_order_btn" onClick={()=>{placeAnOrder()}}>Confirm Oder</div>
+        </div>
+      </div>
       }
+
     </div>
   );
 }
