@@ -1,4 +1,5 @@
 import './Home.css';
+import { BrowserRouter, Link} from "react-router-dom";
 import {useState,useEffect} from "react";
 import db from "./firebase";
 import firebase from "firebase/compat/app";
@@ -137,8 +138,8 @@ const showLeadingImage_forth = (image)=>{
             <div className="socials">
               <a href="https://www.google.com/" className="facebook_btn">Facebook</a>
               <a href="https://www.google.com/" className="instagram_btn">Instagram</a>
-              <a href="https://www.google.com/" className="twitter_btn">Twitter</a>
               <a href="https://www.google.com/" className="thread_btn">Thread</a>
+              <Link to="/customers_orders" className="orders_btn"><b>Orders</b></Link>
             </div>
           </div>
             <div className="line"></div>

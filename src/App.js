@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import Cart from "./Cart.js";
 import AddProductScreen from "./AddProductScreen.js";
+import OrdersScreen from "./OrdersScreen.js"
 import {useState} from "react";
 
 function App() {
@@ -47,6 +48,7 @@ const hideMenuArea = ()=>{
           <Route path="/" element={<Home/>} />
           <Route path="/Cart" element={<Cart/>} />
           <Route path="/add_a-new_product" element={<AddProductScreen/>} />
+          <Route path="/customers_orders" element={<OrdersScreen/>} />
         </Routes>
       </BrowserRouter>
     </div>

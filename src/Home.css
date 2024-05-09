@@ -278,6 +278,7 @@
   color:black;
   padding:0 2vw 0 2vw;
   font-size: 15px;
+  font-weight: 650;
   text-decoration: none;
   right:6vw;
   top:2vh;
@@ -293,21 +294,7 @@
   color:black;
   padding:0 2vw 0 2vw;
   font-size: 15px;
-  text-decoration: none;
-  right:6vw;
-  top:2vh;
-  flex:1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor:pointer;
-}
-
-.twitter_btn{
-  height:6vh;
-  color:black;
-  padding:0 2vw 0 2vw;
-  font-size: 15px;
+  font-weight: 650;
   text-decoration: none;
   right:6vw;
   top:2vh;
@@ -323,6 +310,7 @@
   color:black;
   padding:0 2vw 0 2vw;
   font-size: 15px;
+  font-weight: 650;
   text-decoration: none;
   right:6vw;
   top:2vh;
@@ -332,6 +320,23 @@
   align-items: center;
   cursor:pointer;
 }
+
+
+.orders_btn{
+  height:6vh;
+  color:black;
+  padding:0 2vw 0 2vw;
+  font-size: 15px;
+  text-decoration: none;
+  right:6vw;
+  top:2vh;
+  flex:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor:pointer;
+}
+
 
 .line{
 	height:.2vh;

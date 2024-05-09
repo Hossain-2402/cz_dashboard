@@ -131,12 +131,13 @@ function Cart() {
       alert("Fillup the form first");
     }
     else{
-      db.collection('Orders').add({ 
+      db.collection('orders').add({ 
         products: items,
         customerName: customerName,
         customerLocation : customerLocation,
         customerNumber : customerNumber,
-        customerEmail : customerEmail
+        customerEmail : customerEmail,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
       });
     }
   }
