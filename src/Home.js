@@ -1,10 +1,10 @@
 import './Home.css';
-import { BrowserRouter, Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 import {useState,useEffect} from "react";
 import db from "./firebase";
 import firebase from "firebase/compat/app";
 import {useSelector,useDispatch} from "react-redux";
-import {add_to_cart_action} from "./redux_file"
+import {add_to_cart_action} from "./redux_file";
 
 function Home() {
 
@@ -47,23 +47,21 @@ function Home() {
     setPositionOfDetailArea("-200vw");
   }
   const addItemToCart = ()=>{
-  
-  let alreadyAdded = false;
-  for(let i=0;i<items.length;i++){
-    if(items[i].leading_image === tempNewItemForCart.leading_image){
-      alreadyAdded = true;
-      break;
+    let alreadyAdded = false;
+    for(let i=0;i<items.length;i++){
+      if(items[i].leading_image === tempNewItemForCart.leading_image){
+        alreadyAdded = true;
+        break;
+      }
+      else{
+        continue;
+      }
     }
-    else{
-      continue;
+    if(!alreadyAdded) {
+      dispatch(add_to_cart_action(tempNewItemForCart))
     }
-  }
-  if(!alreadyAdded) {
-    dispatch(add_to_cart_action(tempNewItemForCart))
-  }
 
-  setPositionOfDetailArea("-200vw");
-
+    setPositionOfDetailArea("-200vw");
 }
 
 
@@ -117,9 +115,11 @@ const showLeadingImage_forth = (image)=>{
       </div>
 
       <div className="header">
-        <div className="header_text">Medium length section heading goes here  </div>
-        <div className="sub_header_text">The term business refers to an organization or enterprising entity engaged in commercial, industrial, or professional activities. The purpose of a business is to organize some sort of economic production of goods or services. Businesses can be for-profit entities or non-profit organizations fulfilling a charitable mission or furthering a social cause. Businesses range in scale and scope from sole proprietorships to large, international corporations. </div>
-        <div className="cart_btn" >Cart</div>
+        <div className="grey_layer">
+          <div className="header_text">Medium length section heading goes here  </div>
+          <div className="sub_header_text">The term business refers to an organization or enterprising entity engaged in commercial, industrial, or professional activities. The purpose of a business is to organize some sort of economic production of goods or services. Businesses can be for-profit entities or non-profit organizations fulfilling a charitable mission or furthering a social cause. Businesses range in scale and scope from sole proprietorships to large, international corporations. </div>
+          <Link to="/cart" className="about_us_btn" >About Us</Link>
+        </div>
       </div>
 
       <div className="products_area">
@@ -134,12 +134,11 @@ const showLeadingImage_forth = (image)=>{
 
       <div className="footer">
           <div className="footer_header">
-            <div className="logo_a">Logo </div>
+            <Link to="/customers_orders" className="logo_a"></Link>
             <div className="socials">
               <a href="https://www.google.com/" className="facebook_btn">Facebook</a>
               <a href="https://www.google.com/" className="instagram_btn">Instagram</a>
               <a href="https://www.google.com/" className="thread_btn">Thread</a>
-              <Link to="/customers_orders" className="orders_btn"><b>Orders</b></Link>
             </div>
           </div>
             <div className="line"></div>

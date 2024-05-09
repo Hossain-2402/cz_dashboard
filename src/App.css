@@ -18,19 +18,16 @@ body{
   overflow-x: hidden;
 }
 .logo{
-  height:5vh;
-  width:auto;
-  color:black;
-  font-size: 25px;
-  font-weight: 700;
+  height:10vh;
+  background:url(cz_logo.png);
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position: center center;
   padding:0 2vw 0 2vw;
   text-decoration: none;
   position:absolute;
   left:6vw;
-  top:2vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top:0;
   cursor:pointer;
 }
 .grey_background{
@@ -127,6 +124,11 @@ body{
   cursor:pointer;
 }
 @media(max-width:991px){
+  .logo{
+    height:10vh;
+    width:5vw;
+    background-size: 100%;
+  }
   .menu_btn{
     height:5vh;
     font-size: 25px;

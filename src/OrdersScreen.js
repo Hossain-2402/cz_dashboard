@@ -19,11 +19,9 @@ function OrdersScreen(){
 
 
   const deleteOrder = (order) => {
-  	console.log("working");
     db.collection('orders').onSnapshot(snapshot=>{
       snapshot.docs.map(doc => {
-        if(doc.data().customerNumber === order.customerNumber){
-        	console.log("found");
+        if(doc.data().checkoutID === order.checkoutID){
           const temp = doc.ref;
           temp.delete();
         }

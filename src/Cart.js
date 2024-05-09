@@ -2,7 +2,8 @@ import "./Cart.css";
 import {useSelector} from "react-redux";
 import {useState} from "react";
 import firebase from "firebase/compat/app";
-import db from "./firebase"
+import db from "./firebase";
+import { v4 as uuidv4 } from 'uuid';
 
 function Cart() {
 
@@ -20,6 +21,9 @@ function Cart() {
   const [customerLocation,setCustomerLocation] = useState("");
   const [customerNumber,setCustomerNumber] = useState("");
   const [customerEmail,setCustomerEmail] = useState("");
+
+  const [positionOfThis,setPositionOfThis] = useState(0);
+  const [checkoutId,setCheckoutId] = useState("");
 
   const [currentItem,setCurrentItem] = useState({
         product_name : "Product Name",
@@ -125,20 +129,29 @@ function Cart() {
   const showLeadingImage_forth = (image)=>{
     setTempLeadingImage(image);
   }
-
   const placeAnOrder = ()=>{
     if(customerName === "" || customerLocation === "" || customerNumber === "" || customerEmail === ""){
       alert("Fillup the form first");
     }
     else{
+
+      const tempUniqueId = uuidv4();
+      setCheckoutId(tempUniqueId);
       db.collection('orders').add({ 
         products: items,
         customerName: customerName,
         customerLocation : customerLocation,
         customerNumber : customerNumber,
         customerEmail : customerEmail,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        checkoutID : tempUniqueId
+
       });
+      setCustomerName("");
+      setCustomerLocation("");
+      setCustomerEmail("");
+      setCustomerNumber("");
+      setPositionOfThis(1);
     }
   }
 
@@ -194,11 +207,13 @@ function Cart() {
         <div style={{ left: positionOfCustomerInfoArea}} className="customer_info_area">
           <div className="customer_info_header">Customer Informations : </div>
           <div className="close_customer_info_Area_btn" onClick={()=>{hideCustomerInfoArea()}}><i class="fa fa-times" ></i></div>
-          <input type="text" placeholder="Your Name " className="customer_name" onChange={(e)=>{handle_customer_name(e)}} vclue={customerName}/>
+          <input type="text" placeholder="Your Name " className="customer_name" onChange={(e)=>{handle_customer_name(e)}} value={customerName}/>
           <textarea type="text" placeholder="Your Location" className="customer_location" onChange={(e)=>{handle_customer_location(e)}} value={customerLocation}></textarea >
           <input type="text" placeholder="Your Number " className="customer_number" onChange={(e)=>{handle_customer_number(e)}} value={customerNumber}/>
           <input type="text" placeholder="Your Email " className="customer_email" onChange={(e)=>{handle_customer_email(e)}} value={customerEmail}/>
           <div className="confirm_order_btn" onClick={()=>{placeAnOrder()}}>Confirm Oder</div>
+          <div style={{opacity : positionOfThis}} className="checkoutId">Your Id is : {checkoutId}</div>
+          <div style={{opacity : positionOfThis}} className="note">Remember This id and go to "Order Status" from "Menu" to see status of your order</div>
         </div>
       </div>
       }

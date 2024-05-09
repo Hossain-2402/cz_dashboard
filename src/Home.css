@@ -7,8 +7,21 @@
 	height: 100vh;
 	margin:2vh 0 0 0;
 	width:100vw;
-	background:#6D6D6D;
+	background: url(headerImage.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 	z-index:1;
+	position: relative;
+}
+
+.grey_layer{
+	position: absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background: rgba(0,0,0,.5);
 }
 
 .header_text{
@@ -35,7 +48,7 @@
 	font-size: 25px;
 }
 
-.cart_btn{
+.about_us_btn{
   height:5vh;
   width:15vw;
   border:2px solid white;
@@ -46,6 +59,7 @@
   float: left;
   font-weight: 700;
   font-family: verdana;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +67,7 @@
   transition: .2s;
 }
 
-.cart_btn:hover{
+.about_us_btn:hover{
 	background:white;
 	color:black;
 }
@@ -254,16 +268,16 @@
 }
 
 .logo_a{
-  height:5vh;
-  width:1vw;
-	flex:.5;
+  height:10vh;
+  width:5vw;
   color:black;
-  font-size: 25px;
-  font-weight: 700;
+  background:url(cz_logo.png);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center center;
   padding:0 2vw 0 2vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  float: left;
+  text-decoration: none;
   cursor:pointer;
 }
 
@@ -321,23 +335,6 @@
   cursor:pointer;
 }
 
-
-.orders_btn{
-  height:6vh;
-  color:black;
-  padding:0 2vw 0 2vw;
-  font-size: 15px;
-  text-decoration: none;
-  right:6vw;
-  top:2vh;
-  flex:1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor:pointer;
-}
-
-
 .line{
 	height:.2vh;
 	width:95vw;
@@ -367,8 +364,11 @@
 			.header{
 				height:70vh;
 			}
+			.grey_layer{
+				background: rgba(0, 0, 0, .8);
+			}
 			.header_text{
-				margin-top:6vh;
+				margin-top:10vh;
 				font-size: 20px;
 			}
 			.sub_header_text{
@@ -482,7 +482,9 @@
 			}
 
 			.logo_a{
-				flex:6;
+				height: 5vh;
+				margin-top: 0vh;
+				background-size: 70%;
 			}
 			.line{
 				width:90vw;

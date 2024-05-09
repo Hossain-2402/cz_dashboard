@@ -1,5 +1,5 @@
 .Cart{
-/*	margin-top:-10vh;*/
+	margin-top:10vh;
 }
 
 .no_item_display_area{
@@ -20,6 +20,7 @@
 .products_area{
 	height:auto;
 	width:100vw;
+	float: left;
 	padding:0vh 0 2vh 0;
 }
 
@@ -318,6 +319,8 @@
 	top:0;
 	z-index: 100;
 	transition:.4s;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 .customer_info_header{
@@ -423,10 +426,31 @@
 	border-radius: 10px;
 }
 
+.checkoutId{
+	height:5vh;
+	width:80vw;
+	float: left;
+	color:black;
+	text-align: center;
+	font-weight: 800;
+	margin-top: 5vh;
+	margin-left: 50%;
+	transform: translate(-50%,0);
+}
+
+.note{	
+	height:5vh;
+	width:80vw;
+	float: left;
+	color:black;
+	text-align: center;
+/*	font-weight: 800;*/
+	margin-top: 1vh;
+	margin-left: 50%;
+	transform: translate(-50%,0);
+}
+
 @media(max-width:991px){
-				.Cart{
-					margin-top: 0vh;
-				}
 
 				.no_item_display_area{
 					width:95;
@@ -569,6 +593,13 @@
 				.confirm_order_btn{
 					margin-top:10vh;
 					padding:2vh 10vw 2vh 10vw;
+				}
+
+				.note{
+					width:100vw;
+					margin:5vh 0;
+					transform: translate(0,0);
+					padding:0 0 0 0;
 				}
 
 }

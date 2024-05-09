@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import Cart from "./Cart.js";
-import AddProductScreen from "./AddProductScreen.js";
+import OrderStatusScreen from "./OrderStatusScreen.js";
 import OrdersScreen from "./OrdersScreen.js"
 import {useState} from "react";
 
@@ -31,7 +31,7 @@ const hideMenuArea = ()=>{
       <link rel="styleSheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
       <BrowserRouter>
       <div className="menu_btn" onClick={()=>{showMenuArea()}}><i class="fa fa-bars"></i></div>
-      <Link to="/" className="logo"><b>LOGO</b></Link>
+      <Link to="/" className="logo"></Link>
       <div  style={{ opacity: opacityOfGreyArea, height:heightOfGreyArea}} className="grey_background"></div>
       <div className="menu_btn" onClick={()=>{showMenuArea()}}><i class="fa fa-bars"></i></div>
       <Link to="/cart" className="cart_in_top">Cart</Link>
@@ -40,14 +40,14 @@ const hideMenuArea = ()=>{
           <Link to="/" className="home">
             Home
           </Link>
-          <Link to="/add_a-new_product" className="about_us">
-            Production
+          <Link to="/order_status" className="about_us">
+            Order Status
           </Link>
         </nav>
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/Cart" element={<Cart/>} />
-          <Route path="/add_a-new_product" element={<AddProductScreen/>} />
+          <Route path="/order_status" element={<OrderStatusScreen/>} />
           <Route path="/customers_orders" element={<OrdersScreen/>} />
         </Routes>
       </BrowserRouter>
