@@ -4,10 +4,13 @@ import {useState,useEffect} from "react";
 import db from "./firebase";
 import firebase from "firebase/compat/app";
 import {useSelector,useDispatch} from "react-redux";
-import {add_to_cart_action} from "./redux_file";
+import {add_to_cart_action,increase_number} from "./redux_file";
 
 function Home() {
 
+
+
+  const numberOfItemsInCart = useSelector(state => state.number_of_items);
 
   const [products,setProducts] = useState([]);
   const [positionOfDetailArea,setPositionOfDetailArea] = useState("-200vw");
@@ -59,6 +62,7 @@ function Home() {
     }
     if(!alreadyAdded) {
       dispatch(add_to_cart_action(tempNewItemForCart))
+      dispatch(increase_number());
     }
 
     setPositionOfDetailArea("-200vw");
@@ -116,9 +120,9 @@ const showLeadingImage_forth = (image)=>{
 
       <div className="header">
         <div className="grey_layer">
-          <div className="header_text">Medium length section heading goes here  </div>
-          <div className="sub_header_text">The term business refers to an organization or enterprising entity engaged in commercial, industrial, or professional activities. The purpose of a business is to organize some sort of economic production of goods or services. Businesses can be for-profit entities or non-profit organizations fulfilling a charitable mission or furthering a social cause. Businesses range in scale and scope from sole proprietorships to large, international corporations. </div>
-          <Link to="/cart" className="about_us_btn" >About Us</Link>
+          <div className="header_text">Comfort Zone</div>
+          <div className="sub_header_text">Comfort Zone is a brand targeting the youth to provide their desired outfits. </div>
+          <Link to="/about_us" className="about_us_btn" >About Us</Link>
         </div>
       </div>
 

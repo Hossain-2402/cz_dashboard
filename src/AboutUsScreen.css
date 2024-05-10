@@ -1,0 +1,30 @@
+.AboutUsScreen{
+	margin-top:10vh;
+}
+.logo_header{
+	padding:4vh 10vw 4vh 10vw;
+	color:black;
+	float: left;
+	margin-top: 5vh;
+	margin-left: 50%;
+	transform: translate(-50%,0);
+	text-align: center;
+	border-right:5px solid grey;
+	border-left:5px solid grey;
+	font-family: verdana;
+}
+.about_us_area{
+	height:70vh;
+	width:80vw;
+	float:left;
+	background: white;
+	color: black;
+	padding:10vh 0;
+	font-family: verdana;
+	text-align: justify;
+	letter-spacing: 2px;
+	line-height: 40px;
+	margin-top: 2vh;
+	margin-left: 50%;
+	transform: translate(-50%,0);
+}

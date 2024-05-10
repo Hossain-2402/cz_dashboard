@@ -10,7 +10,7 @@
 	background: url(headerImage.png);
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position:center center;
 	z-index:1;
 	position: relative;
 }
@@ -28,7 +28,7 @@
 	hegith:10vh;
 	width:80vw;
 	margin-left: 5vw;
-	margin-top:24vh;
+	margin-top:30vh;
 	float: left;
 	font-family: "Kanit", sans-serif;
 	font-size: 60px;
@@ -50,7 +50,7 @@
 
 .about_us_btn{
   height:5vh;
-  width:15vw;
+  width:20vw;
   border:2px solid white;
   color:white;
   margin-left: 5vw;
@@ -375,6 +375,11 @@
 				text-align: left;
 				font-size: 15px;
 			}
+
+			.about_us_btn{
+				width:40vw;
+			}
+
 			.products_area{
 				padding:0;
 			}

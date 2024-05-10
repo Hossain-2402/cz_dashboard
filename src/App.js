@@ -4,15 +4,18 @@ import Home from "./Home";
 import Cart from "./Cart.js";
 import OrderStatusScreen from "./OrderStatusScreen.js";
 import OrdersScreen from "./OrdersScreen.js"
+import AboutUsScreen from "./AboutUsScreen.js"
+import {useSelector,useDispatch} from "react-redux";
 import {useState} from "react";
 
 function App() {
+
+const numberOfItemsInCart = useSelector(state => state.number_of_items);
 
 
 const [menuAreaPos,setMenuAreaPos] = useState("-100%");
 const [ opacityOfGreyArea,setOpacityOfGreyArea] = useState("0");
 const [ heightOfGreyArea,setHeightOfGreyArea] = useState("0");
-
 
 const showMenuArea = ()=>{
   setMenuAreaPos("0%");
@@ -34,21 +37,26 @@ const hideMenuArea = ()=>{
       <Link to="/" className="logo"></Link>
       <div  style={{ opacity: opacityOfGreyArea, height:heightOfGreyArea}} className="grey_background"></div>
       <div className="menu_btn" onClick={()=>{showMenuArea()}}><i class="fa fa-bars"></i></div>
-      <Link to="/cart" className="cart_in_top">Cart</Link>
+      <Link to="/cart" className="cart_in_top">Cart
+        {numberOfItemsInCart > 0 ? <div className="number_of_items_in_cart">{numberOfItemsInCart}</div> : <div></div>}
+      </Link>
        <nav style={{ left: menuAreaPos}} className="nev_area" >
           <div className="close_menu_btn" onClick={()=>{hideMenuArea()}}><i class="fa fa-times" ></i> </div>
           <Link to="/" className="home">
             Home
           </Link>
-          <Link to="/order_status" className="about_us">
+          <Link to="/order_status" className="order_status_area_btn">
             Order Status
+          </Link>
+          <Link to="/about_us" className="about_us">
+            About Us
           </Link>
         </nav>
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/Cart" element={<Cart/>} />
           <Route path="/order_status" element={<OrderStatusScreen/>} />
-          <Route path="/customers_orders" element={<OrdersScreen/>} />
+          <Route path="/about_us" element={<AboutUsScreen/>} />
         </Routes>
       </BrowserRouter>
     </div>

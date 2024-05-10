@@ -11,12 +11,18 @@ function OrderStatusScreen(){
 	const [orderStatus,setOrderStatus] = useState("");
 
 	const showOrderStatusArea = (item)=>{
+
+		if(orderID === ""){
+			alert("Enter your order ID");
+			return;
+		}
+
 	    db.collection('orders').onSnapshot(snapshot=>{
 	      snapshot.docs.map(doc => {
 	        if(doc.data().checkoutID === orderID){
 	          const temp = doc.data().products;
 	          setUserOrder(temp);
-	          setOrderStatus("Your Order has been PLACED successfully");
+	          setOrderStatus("Your Order has been PLACED successfully , your order will be delivered within 7 days");
 	        }
 	        else{
 	        	setUserOrder([{

@@ -68,6 +68,22 @@ body{
   align-items: center;
   cursor:pointer;  
 }
+
+.number_of_items_in_cart{
+  position: absolute;
+  height:30px;
+  width:10px;
+  padding:0 1vw;
+  margin-top:-50%;
+  margin-right:-90%;
+  background: white;
+  color:black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
 .nev_area{
   height:200vh;
   width:40vw;
@@ -123,6 +139,23 @@ body{
   align-items: center;
   cursor:pointer;
 }
+
+.order_status_area_btn{
+  height:5vh;
+  width:90%;
+  background:black;
+  color:white;
+  float:left;
+  margin-top:5vh;
+  margin-left:50%;
+  transform: translate(-50%,0);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor:pointer;
+}
+ 
 @media(max-width:991px){
   .logo{
     height:10vh;
@@ -137,6 +170,11 @@ body{
     height:5vh;
     padding:0 6vw 0 6vw;
     right:17vw;
+  }
+  .number_of_items_in_cart{
+    width:20px;
+    margin-top: -40%;
+    margin-right: -90%;
   }
   .nev_area{
     width:80vw;
