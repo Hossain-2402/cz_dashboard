@@ -65,11 +65,12 @@
 
 .order_status{
 	height:5vh;
-	width:100vw;
+	width:80vw;
 	float: left;
 	color:green;
-	padding:2vh 0 0 2vw;
-	font-family: verdana;
+	padding:6vh 0 0 4vw;
+	font-family: "Poetsen One", sans-serif;
+
 }
 
 
@@ -119,6 +120,8 @@
 		}
 
 		.order_status{
+			font-weight: 500;
+			font-family: "Poetsen One", sans-serif;
 			margin:10vh 0;
 		}
 

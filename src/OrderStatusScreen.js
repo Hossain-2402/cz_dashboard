@@ -56,6 +56,7 @@ function OrderStatusScreen(){
 
 	return (
 		<div className="OrderStatusScreen">
+		<link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet"/>
 			<input type="text" placeholder="Enter your Order ID" className="order_status_input"  onChange={(e)=>{handle_orderID(e)}} value={orderID}/>
 			<div className="order_status_btn" onClick={()=>{showOrderStatusArea()}}>See Status</div> 
 

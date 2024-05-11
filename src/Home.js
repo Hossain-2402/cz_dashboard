@@ -126,6 +126,7 @@ const showLeadingImage_forth = (image)=>{
         </div>
       </div>
 
+      <div className="products_header">Products</div>
       <div className="products_area">
         {products.map((item,index) =>{
           return <div key={index} className="product" onClick={()=>{showDetailArea(item)}}>
@@ -138,11 +139,10 @@ const showLeadingImage_forth = (image)=>{
 
       <div className="footer">
           <div className="footer_header">
-            <Link to="/customers_orders" className="logo_a"></Link>
+            <Link to="/" className="logo_a"></Link>
             <div className="socials">
-              <a href="https://www.google.com/" className="facebook_btn">Facebook</a>
-              <a href="https://www.google.com/" className="instagram_btn">Instagram</a>
-              <a href="https://www.google.com/" className="thread_btn">Thread</a>
+              <a href="https://www.facebook.com/comfortzone.outfit" className="facebook_btn">Facebook</a>
+              <a href="https://www.instagram.com/comfortzone.outfit/" className="instagram_btn">Instagram</a>
             </div>
           </div>
             <div className="line"></div>

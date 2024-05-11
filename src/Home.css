@@ -72,6 +72,13 @@
 	color:black;
 }
 
+.products_header{
+	padding:2vh 2.5vw;
+	margin:5vh 0 0 0 ;
+	font-size: 20px;
+	font-weight: 600;
+}
+
 .products_area{
 	height:auto;
 	width:100vw;
@@ -319,22 +326,6 @@
   cursor:pointer;
 }
 
-.thread_btn{
-  height:6vh;
-  color:black;
-  padding:0 2vw 0 2vw;
-  font-size: 15px;
-  font-weight: 650;
-  text-decoration: none;
-  right:6vw;
-  top:2vh;
-  flex:1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor:pointer;
-}
-
 .line{
 	height:.2vh;
 	width:95vw;
@@ -362,7 +353,8 @@
 				overflow-x: hidden;
 			}
 			.header{
-				height:70vh;
+				height:40vh;
+				background-size:cover;
 			}
 			.grey_layer{
 				background: rgba(0, 0, 0, .8);
@@ -378,6 +370,10 @@
 
 			.about_us_btn{
 				width:40vw;
+			}
+
+			.products_header{
+				padding: 2vh 0 0 2.5vh;
 			}
 
 			.products_area{
@@ -489,7 +485,8 @@
 			.logo_a{
 				height: 5vh;
 				margin-top: 0vh;
-				background-size: 70%;
+				background-size: 35%;
+				flex:.6;
 			}
 			.line{
 				width:90vw;
