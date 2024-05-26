@@ -130,6 +130,18 @@ const showLeadingImage_forth = (image)=>{
       <div className="products_area">
         {products.map((item,index) =>{
           return <div key={index} className="product" onClick={()=>{showDetailArea(item)}}>
+          
+
+            <div class="mouse m1"></div>
+            <div class="mouse m2"></div>
+            <div class="mouse m3"></div>
+            <div class="mouse m4"></div>
+            <div class="mouse m5"></div>
+            <div class="mouse m6"></div>
+            <div class="mouse m7"></div>
+            <div class="mouse m8"></div>
+            <div class="mouse m9"></div>
+
             <div style={{ backgroundImage: "url("+item.leading_image+")",backgroundRepeat : 'no-repeat',backgroundSize : '85%'}}  className="image"></div>
             <div className="product_name">{item.product_name}</div>
             <div className="price">৳ {item.product_price}</div>
