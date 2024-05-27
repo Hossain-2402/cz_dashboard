@@ -209,8 +209,8 @@ function Cart() {
           <div className="close_customer_info_Area_btn" onClick={()=>{hideCustomerInfoArea()}}><i class="fa fa-times" ></i></div>
           <input type="text" placeholder="Your Name " className="customer_name" onChange={(e)=>{handle_customer_name(e)}} value={customerName}/>
           <textarea type="text" placeholder="Your Location" className="customer_location" onChange={(e)=>{handle_customer_location(e)}} value={customerLocation}></textarea >
-          <input type="text" placeholder="Your Number " className="customer_number" onChange={(e)=>{handle_customer_number(e)}} value={customerNumber}/>
-          <input type="text" placeholder="Your Email " className="customer_email" onChange={(e)=>{handle_customer_email(e)}} value={customerEmail}/>
+          <input type="number" placeholder="Your Number " className="customer_number" onChange={(e)=>{handle_customer_number(e)}} value={customerNumber}/>
+          <input type="email" placeholder="Your Email " className="customer_email" onChange={(e)=>{handle_customer_email(e)}} value={customerEmail}/>
           <div className="confirm_order_btn" onClick={()=>{placeAnOrder()}}>Confirm Oder</div>
           <div style={{opacity : positionOfThis}} className="checkoutId">Your Id is : {checkoutId}</div>
           <div style={{opacity : positionOfThis}} className="note">Remember This id and go to "Order Status" from "Menu" to see status of your order</div>
