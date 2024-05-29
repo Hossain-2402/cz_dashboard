@@ -1,8 +1,23 @@
 
 .Home{
 	margin-top:10vh;
+	animation: animate_Home 1500s ease-in-out;
 }
 
+@keyframes animate_Home{
+	0%{
+		opacity: 0;
+	}
+	.38%{
+		opacity: 0;
+	}
+	.42%{
+		opacity: 1;
+	}
+	99.99%{
+		opacity: 1;
+	}
+}
 
 .cover{
 	position: fixed;
@@ -18,18 +33,18 @@
 	0%{
 		height: 100%;
 		width: 100%;
-		left:0;
+		top:0;
 	}	
 	.38%{
-		left:0;
+		top:0;
 	}
 	.42%{
-		left:-400vw;
+		top:-400vw;
 	}
 	.57%{
 		height:100%;
 		width:100%;
-		left:-400vw;
+		top:-400vw;
 	}
 	.58%{
 		height:0;
@@ -39,14 +54,14 @@
 	99.99%{
 		height:0;
 		width:0;
-		left:-400vw;
+		top:-400vw;
 	}
 }
 
 
 .box{
 	height: 50vh;
-	width: 20vw;
+	width: 50vw;
 	margin: 20vh 0 0 50%;
 	overflow: hidden;
 	transform: translate(-50%,0);
@@ -55,35 +70,35 @@
 @keyframes animate{
 	0%{
 		height: 50vh;
-		width: 20vw;
+		width: 40vw;
 	}
 	.1%{
 		height: 50vh;
-		width: 20vw;
+		width: 40vw;
 	}
 	.18%{
 		height: 50vh;
-		width: 60vw;
+		width: 80vw;
 	}
 	.40%{
 		height: 50vh;
-		width: 60vw;	
+		width: 80vw;	
 	}
 	.46%{
 		height: 50vh;
-		width: 20vw;	
+		width: 40vw;	
 	}
 	.5%{
 		height: 50vh;
-		width: 20vw;
+		width: 40vw;
 	}
 	.56%{
 		height: 50vh;
-		width: 20vw;	}
+		width: 40vw;	}
 	99.99%{
 		top: 0;
 		height: 50vh;
-		width: 20vw;
+		width: 40vw;
 	}
 }
 
@@ -214,7 +229,7 @@
 	left: 50%;
 	background: url(image_3.jpg);
 	background-repeat: no-repeat;
-	background-size:170%;
+	background-size:120%;
 	background-position: center center;
 	background-attachment: fixed;
 	transform: translate(-50%,0);
@@ -284,9 +299,10 @@
 	margin:2vh 0 0 0;
 	width:100vw;
 	background: url(headerImage.png);
-	background-size: cover;
+/*	background-size: 50%;*/
 	background-repeat: no-repeat;
-	background-position:center center;
+	background-position:top center;
+	background-attachment: fixed;
 	z-index:1;
 	position: relative;
 }
@@ -352,7 +368,9 @@
 	padding:2vh 2.5vw;
 	margin:5vh 0 0 0 ;
 	font-size: 20px;
-	font-weight: 600;
+	color: black;
+	font-weight: 900;
+	font-family: "Kanit", sans-serif;
 }
 
 .products_area{
@@ -373,7 +391,7 @@
 .image{
 	height:50vh;
 	width:20vw;
-	background-position: left center;
+	background-position: center center;
 	transition: .4s;
 }
 
@@ -400,7 +418,8 @@
 	position: absolute;
 	height: 33.33%;
 	width: 33.33%;
-/*	background: red;*/
+/*	background:rgba(255,255,255,.6);*/
+/*background: red;*/
 	z-index: 10;
 }
 .m1{
@@ -874,6 +893,8 @@
 			.header{
 				height:40vh;
 				background-size:cover;
+				background-position: bottom center;
+				background-attachment: scroll;
 			}
 			.grey_layer{
 				background: rgba(0, 0, 0, .8);
@@ -1015,3 +1036,6 @@
 				width:70vw;
 			}
 }	
+
+/*<i class="fa fa-times" ></i>*/
+

@@ -206,7 +206,7 @@ function Cart() {
         <div className="gap_at_end"></div>
         <div style={{ left: positionOfCustomerInfoArea}} className="customer_info_area">
           <div className="customer_info_header">Customer Informations : </div>
-          <div className="close_customer_info_Area_btn" onClick={()=>{hideCustomerInfoArea()}}><i class="fa fa-times" ></i></div>
+          <div className="close_customer_info_Area_btn" onClick={()=>{hideCustomerInfoArea()}}> X </div>
           <input type="text" placeholder="Your Name " className="customer_name" onChange={(e)=>{handle_customer_name(e)}} value={customerName}/>
           <textarea type="text" placeholder="Your Location" className="customer_location" onChange={(e)=>{handle_customer_location(e)}} value={customerLocation}></textarea >
           <input type="number" placeholder="Your Number " className="customer_number" onChange={(e)=>{handle_customer_number(e)}} value={customerNumber}/>

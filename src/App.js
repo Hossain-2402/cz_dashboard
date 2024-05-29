@@ -33,7 +33,7 @@ const hideMenuArea = ()=>{
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"/>
       <link rel="styleSheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
       <BrowserRouter>
-      <div className="menu_btn" onClick={()=>{showMenuArea()}}><i class="fa fa-bars"></i></div>
+      <div className="menu_btn" onClick={()=>{showMenuArea()}}><i class="fa fa-bars"></i>  </div>
       <Link to="/" className="logo"></Link>
       <div  style={{ opacity: opacityOfGreyArea, height:heightOfGreyArea}} className="grey_background"></div>
       <div className="menu_btn" onClick={()=>{showMenuArea()}}><i class="fa fa-bars"></i></div>
@@ -41,14 +41,14 @@ const hideMenuArea = ()=>{
         {numberOfItemsInCart > 0 ? <div className="number_of_items_in_cart">{numberOfItemsInCart}</div> : <div></div>}
       </Link>
        <nav style={{ left: menuAreaPos}} className="nev_area" >
-          <div className="close_menu_btn" onClick={()=>{hideMenuArea()}}><i class="fa fa-times" ></i> </div>
-          <Link to="/" className="home">
+          <div className="close_menu_btn" onClick={()=>{hideMenuArea()}}> X </div>
+          <Link to="/" onClick={()=>{ hideMenuArea() }} className="home">
             Home
           </Link>
-          <Link to="/order_status" className="order_status_area_btn">
+          <Link to="/order_status" onClick={()=>{ hideMenuArea() }} className="order_status_area_btn">
             Order Status
           </Link>
-          <Link to="/about_us" className="about_us">
+          <Link to="/about_us" onClick={()=>{ hideMenuArea() }} className="about_us">
             About Us
           </Link>
         </nav>

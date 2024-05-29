@@ -42,8 +42,10 @@ function OrderStatusScreen(){
 	      })
 
 	    })
-	      console.log(orderFound);
-      if(orderFound != true) {console.log(orderFound); setOrderFound(false) ; setOrderStatus("Your Order has been been DELIVERED")}
+      if(orderFound != true) {
+		setOrderFound(false);
+		setOrderStatus("Your Order has been been DELIVERED")
+      }
 		setPosition("0");
 		setOrderID("");
 	}
